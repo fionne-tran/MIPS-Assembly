@@ -74,13 +74,7 @@ endClean:
 	li $t5, 0	# Lines counter
 	li $t6, 0	# Signed Numbers counter
 	
-# loop:
-# Author: Fionne Tran
-# Modification History:
-# This code was last modified on 22 October 2021. Any changes before that time are undocumented.
-# Description: Reads file
-# Arguments:
-# None
+
 loop:
 	bge $t0, $s1, end           # If end of file reached OR if there is an error in the file
 	lb $t9, buffer($t0)         # Load next byte from file
@@ -95,23 +89,12 @@ loop:
 	addi $t0, $t0, 1	# Increase loop counter
 j loop
 
-# end:
-# Author: Fionne Tran
-# Modification History:
-# This code was last modified on 22 October 2021. Any changes before that time are undocumented.
-# Description: Prints and closes file
-# Arguments:
-# None
 end:
 	jal output	# Prints out counters and their headers
 	jal fileClose	# Closes file
 
 	li $v0, 10
 	syscall
-	
-	
-	
-	
 	
 # fileRead:
 # Author: Fionne Tran
